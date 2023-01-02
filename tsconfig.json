@@ -20,6 +20,14 @@
     "incremental": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "paths": {
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+    }
   },
   "include": [
     "next-env.d.ts",

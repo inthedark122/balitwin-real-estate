@@ -40,7 +40,6 @@ export function CardCarousel({ FirstCard, Card, items }: Props) {
         slidesPerView="auto"
         slidesPerGroupAuto
         modules={[A11y]}
-        onSlideChange={() => console.log('slide change')}
         onSwiper={setSwiper}
       >
         {items.map((item, idx) => (

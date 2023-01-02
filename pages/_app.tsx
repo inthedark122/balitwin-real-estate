@@ -22,6 +22,9 @@ const theme = createTheme({
       dark: '#00549a',
       contrastText: '#fff',
     },
+    text: {
+      primary: '#525252',
+    },
   },
   typography: {
     fontFamily: inter.style.fontFamily,

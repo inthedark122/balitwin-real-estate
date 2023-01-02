@@ -28,23 +28,23 @@ export function Header() {
       <Box bgcolor="#F1F2F3">
         <Container maxWidth="xl" sx={{ paddingX: 3 }}>
           <Stack spacing={3.5} direction="row" height={34} alignItems="center">
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               Скачать BaliTwin App
             </Typography>
             <Box flexGrow={1} />
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               О BaliTwin
             </Typography>
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               Партнеры BaliTwin
             </Typography>
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               Образовательный центр BaliTwin
             </Typography>
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               Вакансии в BaliTwin
             </Typography>
-            <Typography variant="body2" fontWeight="bold" color="#525252">
+            <Typography variant="body2" fontWeight="bold">
               Реклама в BaliTwin
             </Typography>
           </Stack>
