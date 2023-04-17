@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                 Int       @id @default(autoincrement())
+  username           String    @unique
+  email              String    @unique
+  firstName          String
+  lastName           String
+  password           String
+  phone              String
+  isDocumentVerified Boolean   @default(false)
+  role               Role      @default(USER)
+  posts              Post[]
+  companies          Company[]
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model Post {
+  id          Int         @id @default(autoincrement())
+  author      User        @relation(fields: [authorId], references: [id])
+  company     Company     @relation(fields: [companyId], references: [id])
+  postType    PostType    @relation(fields: [postTypeId], references: [id])
+  published   Boolean     @default(false)
+  title       String      @db.VarChar(255)
+  price       Decimal     @db.Decimal(16, 2)
+  discount    Int         @db.SmallInt()
+  description String
+  images      PostImage[]
+  // primaryImage   PostImage @relation(fields: [primaryImageId], references: [id])
+  authorId    Int
+  companyId   Int
+  postTypeId  Int
+  // primaryImageId Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Company {
+  id      Int    @id @default(autoincrement())
+  name    String @db.VarChar(255)
+  owner   User   @relation(fields: [ownerId], references: [id])
+  posts   Post[]
+  ownerId Int
+}
+
+model PostImage {
+  id     Int    @id @default(autoincrement())
+  name   String @db.VarChar(255)
+  postId Int
+  post   Post   @relation(fields: [postId], references: [id])
+}
+
+model PostType {
+  id    Int    @id @default(autoincrement())
+  name  String @db.VarChar(255)
+  posts Post[]
+}
+
+enum Role {
+  USER
+  MANAGER
+  ADMIN
+}

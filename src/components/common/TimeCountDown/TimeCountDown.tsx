@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect, useCallback } from 'react';
 import { Stack, Box, Typography } from '@mui/material';
 import differenceInSeconds from 'date-fns/differenceInSeconds';
-import { convertToDuration } from '../../../lib/utils/time';
+import { convertToDuration } from '@/lib/utils/time';
 
 type Props = {
   date: Date;

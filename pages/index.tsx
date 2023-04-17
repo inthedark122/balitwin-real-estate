@@ -5,13 +5,12 @@ import {
   Stack,
   Typography,
   Box,
-  Grid,
   Divider,
 } from '@mui/material';
-import { CardCarousel } from '../components/common/CardCarousel';
-import { TimeCountDown } from '../components/common/TimeCountDown';
-import { NewsOwnerCarouseCard } from '../components/elements/NewsOwnerCarouseCard';
-import { PostCard } from '../components/elements/PostCard';
+import { CardCarousel } from '@/components/common/CardCarousel';
+import { TimeCountDown } from '@/components/common/TimeCountDown';
+import { NewsOwnerCarouseCard } from '@/components/elements/NewsOwnerCarouseCard';
+import { PostCard } from '@/components/elements/PostCard';
 
 export default function Home() {
   return (

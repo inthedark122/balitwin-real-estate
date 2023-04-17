@@ -18,15 +18,18 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 *.pem
 
+# Logs
+logs
+*.log
+
 # debug
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
@@ -42,3 +45,7 @@ next-env.d.ts
 # temp
 tmp/
 temp/
+
+# Tests
+/coverage
+/.nyc_output

@@ -3,8 +3,9 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import type { AppProps } from 'next/app';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Header } from '../components/elements/Header';
-import { Footer } from '../components/elements/Footer';
+import { Header } from '@/components/elements/Header';
+import { Footer } from '@/components/elements/Footer';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,6 +49,9 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isAdmin = router.asPath.startsWith('/admin');
+
   return (
     <ThemeProvider theme={theme}>
       <main>
@@ -58,9 +62,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <CssBaseline />
-        <Header />
+        {!isAdmin && <Header />}
         <Component {...pageProps} />
-        <Footer />
+        {!isAdmin && <Footer />}
       </main>
     </ThemeProvider>
   );
